@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">003_Preguntas</string>
+    <string name="pregunta1"> El kiwi es un mamífero </string>
+    <string name="explicacion1"> Es un ave que vive en Australia</string>
+    <string name="pregunta2"> El Nilo es el río más caudaloso </string>
+    <string name="explicacion2"> No, es el más largo pero el Amazonas si lo es</string>
+    <string name="texto_verdadero"> VERDADERO</string>
+    <string name="texto_falso"> FALSO</string>
+    <string name="cerrar"> CERRAR</string>
+    <string name="respuesta_ok"> Ha acertado</string>
+    <string name="respuesta_mal"> Respuesta es <b> incorrecta</b> . Ver explicación</string>
+</resources>
