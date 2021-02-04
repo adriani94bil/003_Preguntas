@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView textViewPregunta;
     private TextView avisoView;
     private int idPreguntaActual=0;
+    private int sumatorio=0;
 
 
 
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     private void cargarPregunta(){
         this.textViewPregunta.setText(preguntas[idPreguntaActual].getPregunta());
+
     }
     @Override
     public void onClick(View v){
@@ -69,11 +71,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(preguntas[idPreguntaActual].isRespuesta()==respuesta){
             Log.i("trivial","acertó");
             res="Has acertado";
+            sumatorio++;
         }else{
             Log.i("trivial","fallo");
             res="Fallastes";
             expl=preguntas[idPreguntaActual].getExplicacion();
         }
+        this.avisoView.setText("ACIERTOS  "+(avisoView.getText().toString()));
         Intent intent=new Intent (this, Mensaje.class);
         intent.putExtra("dato",res);
         intent.putExtra("explicacion",expl);
@@ -86,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             int numero=data.getIntExtra("resultado",0);
             if(idPreguntaActual==this.preguntas.length-1){
                 this.idPreguntaActual=0;
+                this.sumatorio=0;
                 this.btnForward.setEnabled(true);
             }else{
                 this.idPreguntaActual++;
